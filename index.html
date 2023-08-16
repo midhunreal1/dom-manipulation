@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Headmaster</h1>
+    <input type="text" placeholder="Type the period" value="">
+    <button value="Teacher" >Teacher</button>
+
+    <script>
+    var h1Element = document.getElementsByTagName("h1")[0];
+    var inputElement = document.getElementsByTagName("input")[0];
+    var btnElement = document.getElementsByTagName("button")[0];
+    btnElement.addEventListener('click',()=>{
+      let text1 = btnElement.innerHTML;
+      let text2 = inputElement.value;
+      inputElement.value=text1;
+      btnElement.innerHTML=text2;
+    })
+    </script>
+</body>
+</html>
