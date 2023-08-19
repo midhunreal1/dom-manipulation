@@ -1,25 +1,83 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input {
+            padding: 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+
+        #output p {
+            margin: 5px 0;
+            color: #666;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
     <h1>Headmaster</h1>
     <input type="text" placeholder="Type the period" value="">
-    <button value="Teacher" >Teacher</button>
+    <button value="Teacher">Teacher</button>
+
+    <div id="output"></div>
 
     <script>
-    var h1Element = document.getElementsByTagName("h1")[0];
-    var inputElement = document.getElementsByTagName("input")[0];
-    var btnElement = document.getElementsByTagName("button")[0];
-    btnElement.addEventListener('click',()=>{
-      let text1 = btnElement.innerHTML;
-      let text2 = inputElement.value;
-      inputElement.value=text1;
-      btnElement.innerHTML=text2;
-    })
+        var h1Element = document.getElementsByTagName("h1")[0];
+        var inputElement = document.getElementsByTagName("input")[0];
+        var btnElement = document.getElementsByTagName("button")[0];
+        var outputElement = document.getElementById("output");
+
+        btnElement.addEventListener('click', () => {
+            let text1 = btnElement.innerHTML;
+            let text2 = inputElement.value;
+
+            inputElement.value = text1;
+            btnElement.innerHTML = text2;
+            
+            h1Element.innerText = text2;
+
+            outputElement.innerHTML += `<p>${text2}</p>`;
+
+            inputElement.value = '';
+        });
     </script>
 </body>
 </html>
